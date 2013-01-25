@@ -1,4 +1,4 @@
-PHP_Coding_Standards
+PHP Coding Standards
 ====================
 
 This document describe about a professional standards on my own project using CakePHP. 
