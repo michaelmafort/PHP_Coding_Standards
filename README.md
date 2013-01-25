@@ -13,7 +13,7 @@ If you need to use, feel free.
 
 - Use only UTF-8 without BOM for PHP code, this make your code clean of charsets problems.
 
-- Do not use the same file with more than one Class.
+- Do not use the same file with more than one `Class`.
 
 - Class names must be declared in `StudlyCaps`.
 
@@ -21,9 +21,9 @@ If you need to use, feel free.
 
 - Method names must be declared in `camelCase`.
 
-- For Class file not close the php tag ?>.
+- For Class file not close the php tag `?>`.
 
-- Directory names must be named in StudleCaps.
+- Directory names must be named in `StudleCaps`.
 
 - Document the variable, methods and classes.
 
@@ -137,7 +137,7 @@ if($var == 1) {
 ```
 
 - Function must be called without spaces between the function name and the parenthesis, the spaces is only used for separete function attributes.
- 
+
 ```php
 $result = foo(1, 2, 3);
 ```
@@ -172,7 +172,7 @@ Describe your contents, todos, mistakes and jokes
 3. Includes
 -----------
 
-If you are using CakePHP framework the includes are maked by the App static class, something like this:
+If you are using `CakePHP` framework the includes are maked by the App static class, something like this:
 
 ```php
 //to import any file
