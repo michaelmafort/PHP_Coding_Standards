@@ -124,8 +124,11 @@ class ClassName {
 - For methods, functions and classes use the bracked after one space of the class name, or extended class, interface or traits.
 
 ```php
-//Never use the structure below.
+//Wrong ternary
 $result = $var == 1 ? 'output' : $var == 2 ? 'continue' : 'none';
+
+//Right ternary
+$isMale = ($var ==  'male') ? true : false;
 
 //In the case above prefer to use if, else structure
 $result = 'none';
