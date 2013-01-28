@@ -9,7 +9,7 @@ If you need to use, feel free.
 1. Directories and Files
 -----------
 
-- To open php script tags, use `<?php` or `<?=` if you like to print the output.
+- To open php script tags, use `<?php` only.
 
 - Use only UTF-8 without BOM for PHP code, this make your code clean of charsets problems.
 
