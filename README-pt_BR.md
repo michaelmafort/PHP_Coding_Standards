@@ -1,39 +1,39 @@
-PHP Coding Standards
+PHP Padrões de Código
 ====================
 
-This document describe about a professional standards on my own project using CakePHP. 
-The standards is base on PSR-1 e CakePHP Coding Standards.
+Este documento descreve sobre padrões profissionais usados em projetos com o framework CakePHP.
+Os padrões são baseados no PSR-1 e CakePHP Coding Standards.
 
-If you need to use, feel free.
+Se você precisar utilizá-lo em seus projetos, sinta-se avontade.
 
-1. Directories and Files
+1. Diretórios e Arquivos
 -----------
 
-- To open php script tags, use `<?php` only.
+- Para abrir tags php use somente `<?php`.
 
-- Use only UTF-8 without BOM for PHP code, this make your code clean of charsets problems.
+- Use somente UTF-8 sem BOM para seus códigos PHP, fazendo seu código mais limpo e padronizado, evitando problemas de codificação.
 
-- Do not use the same file with more than one `Class`.
+- Não use o mesmo arquivo para criar mais de uma classe.
 
-- Class names must be declared in `StudlyCaps`.
+- Nomes de classe devem ser declarados em `StudlyCaps`.
 
-- Class constants must be declared in all upper case with underscore separators.
+- Constantes de classes devem ser declarada com todas as letras em caixa alta, separando as palavras com underscore.
 
-- Method names must be declared in `camelCase`.
+- Nomes de métodos devem ser declarados em `camelCase`.
 
-- For Class file not close the php tag `?>`.
+- Não use o fechamento de tag php `?>` para classes e arquivos que serão incluídos.
 
-- Directory names must be named in `StudleCaps`.
+- Nomes de diretórios devem ser escritos em `StudleCaps`.
 
-- Document the variable, methods and classes.
+- Documente as variáveis, métodos e classes.
 
-- Samples:
+- Exemplos:
 
 ```php
-//filepath: Controller/PagesController.php
+//caminho do arquivo: Controller/PagesController.php
 <?php
 /**
- * This class is a sample class standards about the writing code in php.
+ * Esta classe é um exemplo de classe com os padrões de escrita de código em PHP.
  *
  * PHP 5
  *
@@ -52,38 +52,38 @@ class PagesController extends AppController{
 
     /**
     * @var String
-    * Description of the constant
+    * Descrição da constante
     */
-    const VARIABLE_NAME = 'value';
+    const NOME_DA_CONSTANTE = 'valor';
+    
+    /**
+    * @var String
+    * Descrição da variável
+    */
+    private $__nomeDaVariavel = 'valor';
+    
+    /**
+    * @var String
+    * Descrição da variável
+    */
+    protected $_nomeDaVariavel = 'valor';
+    
+    /**
+    * @var String
+    * Descrição da variável
+    */
+    public $nomeDaVariavel = 'valor';
     
     /**
     * @var String
     * Description of the variable
     */
-    private $__variableName = 'value';
+    public static $staticVar = 'valor';
     
     /**
-    * @var String
-    * Description of the variable
-    */
-    protected $_variableName = 'value';
-    
-    /**
-    * @var String
-    * Description of the variable
-    */
-    public $variableName = 'value';
-    
-    /**
-    * @var String
-    * Description of the variable
-    */
-    public static $staticVar = 'value';
-    
-    /**
-    * Function name
-    * Description of the method behavior
-    * @param $param1 String Description of the param1
+    * index
+    * Descrição do comportamento do método
+    * @param $param1 String Descrição do atributo
     * @return void
     */
     public function index($param1 = null) {
@@ -92,45 +92,43 @@ class PagesController extends AppController{
     }
   
     /**
-    * Function name
-    * Description of the method behavior
-    * @return array List of users
+    * process
+    * Descrição do comportamento do método
+    * @return array Lista de Usuários
     */
     private function __process() {
-        //some code here
+        //seu código aqui
         return array();
     }
 
 }
 ```
 
-2. Best practices for structures. Conditions and loops.
+2. Melhores práticas para estruturas, condições e loops.
 ----------
 
-- Use 4 (four) spaces to ident, replace on your IDE the tab for four spaces.
+- Utilize 4 espaços para identação, substitua em sua IDE a tab por 4 espaços.
 
 ```php
 class ClassName {
-    public function nameMethod() {
-        //method content
+    public function nomeDoMetodo() {
+        //conteúdo do método
     }
 }
 ````
 
-- Do not use the nested ternary structure.
-- Use ternary only for simple conditions.
-- The if, else structure must be writed using the bracket after the closing parenthesis and one space between the parenthesis and bracket.
-- For else if use on same line of the closing bracked of the if separeted by one space between the ending bracked and the else instruction.
-- For methods, functions and classes use the bracked after one space of the class name, or extended class, interface or traits.
+- Não utilize estruturas ternárias com vários níveis, utilize apenas para condições simples.
+- Estruturas de IF, ELSE utilize as chaves logo após um espaçamento entre os parenteses e as chaves, inclua o ELSE na mesma linha de fechamento da chave do IF e utilize um espaçamento entre as chaves.
+- Para métodos, funções e classes use as chaves após um espaço entre a nome da classe, interface ou traits.
 
 ```php
-//Wrong ternary
+//Ternário errado
 $result = $var == 1 ? 'output' : $var == 2 ? 'continue' : 'none';
 
-//Right ternary
+//Ternário Correto
 $isMale = ($var ==  'male') ? true : false;
 
-//In the case above prefer to use if, else structure
+//No caso abaixo, prefira utilizar estrutura de IF, ELSE
 $result = 'none';
 if($var == 1) {
     $result = 'output';
@@ -139,19 +137,19 @@ if($var == 1) {
 }
 ```
 
-- Function must be called without spaces between the function name and the parenthesis, the spaces is only used for separete function attributes.
+- Funções devem ser chamados sem espaçamento entre o nome da função e seus parentesis, os espaços são usados somente para separar os atributos.
 
 ```php
 $result = foo(1, 2, 3);
 ```
 
-- Variables names follow the write on camelCase, except for classes instances, where you use the same name of the Class.
+- Nomes de variáveis devem ser escritas utilizando o `camelCase`, exceto para instancias de classes, onde você deve utilizar para a variável o mesmo nome da classe.
 
 ```php
 $PagesController = new PagesController();
 ```
 
-- Nested methods use on method by line and ident the nexts methods by one tab (4 spaces)
+- Métodos aninhados devem ser chamado um método por linha, utilizando um espaçamento de 4 caracteres.
 
 ```php
 $ComponentName->init()
@@ -160,29 +158,28 @@ $ComponentName->init()
     ->execute();
 ```
 
-- Comments inline use //.
-- Comments multiline use /**/
+- Para comentários em linha use //.
+- Para comentários multi linhas use /**/
 
 ```php
-//Coment inline
+//COmentário em linha
 /*
-Multiline comment
-Describe your contents, todos, mistakes and jokes 
-(I'm joking, of your write the jokes on your code, never write this :P)
+Comentário multi linha
+Descreva seu conteúdo, comportamento, etc
 */
 ```
 
-3. Includes
+3. Inclusão de arquivos
 -----------
 
-If you are using `CakePHP` framework the includes are maked by the App static class, something like this:
+Se você está usando o framework `CakePHP` as inclusões devem ser feitas pela classe estatica App, conforme exemplo abaixo:
 
 ```php
-//to import any file
+//para importar qualquer arquivo
 //docs http://book.cakephp.org/2.0/en/core-utility-libraries/app.html#including-files-with-app-import
 App::import(mixed $type = null, string $name = null, mixed $parent = true, array $search = array(), string $file = null, boolean $return = false);
 
-//to import cakephp objects
+//Para importar objetos do framework
 App::uses('PostsController', 'Controller');
 App::uses('AuthComponent', 'Controller/Component');
 App::uses('MyModel', 'Model');
